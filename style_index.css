@@ -1,0 +1,490 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Assistant,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+body{
+  
+    scroll-behavior: smooth;
+}
+/* Initially hide the login form */
+.loginform {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Animation for the login form */
+.loginform.slide {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    /* Fully dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* Ensure it's above all other content */
+}
+
+.loader img {
+    width: 50px; /* Set the width of your loader image */
+    height: 50px; /* Set the height of your loader image */
+    animation: spin 2s linear infinite; /* Rotate for 2 seconds */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Hide loader when content is loaded */
+body.loaded .loader-wrapper {
+    display: none;
+}
+
+header{
+    position: fixed;
+    align-items: center;
+    display: flex;
+    height: 80px;
+    width: 100%;
+    z-index: 99;
+    background-color: rgb(255, 255, 255);
+    justify-content: space-between;
+    box-shadow: 0 10px 18px 0 rgba(0,0,0,.05);
+
+}
+.mainlogo img{
+    width: 100%;
+    height: 38px;
+   
+}
+.mainlogo{
+    padding-left: 50px;
+}
+
+
+
+
+
+.mobile_navbar_logo{
+    display: none;
+    cursor: pointer;
+}
+
+.mobile_searchbox{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.loginbox{
+    display: flex;
+    align-items: center;
+    min-width: 200px;
+    justify-content: space-around;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.actioncontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.actioncontainer[name="mobile_searchbox_name"]{
+    display: none;
+}
+
+
+
+
+main{
+    width: 100%;
+    height: 300px;
+    margin-top: auto;
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0;
+    background-color: rgb(255, 255, 255);
+}
+
+.slide{
+    transition: 0.5s;
+    width: 100%;
+    position: absolute;
+    box-shadow: 9px 0  0;
+}
+.img_scroll_button{
+    text-align: center;
+}
+.img_scroll_button button{
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+
+
+
+
+
+
+
+
+.navbar_name{
+    display: none;
+}
+
+
+.banner_title{
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #ffffff;
+}
+.banner_title h4{
+    text-transform: uppercase;
+    color: #3e4152;
+    letter-spacing: 3px;
+    font-size: 1.8em;
+    margin: 50px 0 10px 30px;
+    max-height: 5em;
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+
+.mobile_sidebar{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.profile_dropdown{
+    display: flex;
+    position: absolute;
+    background:#ffffff;
+    top: 100%;
+    left: 75%;
+    visibility: hidden;
+    opacity: 0;
+    height: 440px;
+    width:22%;
+    box-shadow: 0px 0px 1px;
+    transition: 0.5s;
+}
+.loginbox>:hover .profile_dropdown{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+.loginform{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.loginform>img{
+    width: 20%;
+    height: auto;
+    padding-top: 178px;
+    
+}
+.logininterface{
+    margin-top: 10%;
+    width: 35%;
+    height: 75vh;
+    display: block;
+    background: rgb(255, 255, 255);
+    border-radius: 2%;
+    box-shadow: 10px 50px 50px 0 rgba(0,0,0,.05);
+    justify-content: space-evenly;
+    text-align: center;
+}
+.loghead{
+    display: flex;
+    width: 100%;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+.loginput{
+    display: flex;
+    width: 100%;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+.loglogo{
+    display: flex;
+    width: 100%;
+    height: 170px;
+    justify-content: center;
+    align-items: center;
+}
+.loglogo img{
+    width: 35%;
+    height: auto;
+}
+
+  
+  
+  input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    margin-top: 5px;
+    border:none;
+    border-bottom: 3px solid silver;
+  }
+  
+  input[type="submit"] {
+    width: 35%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #ca3c6b;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #000000;
+    color: white;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 600px ){
+    header{
+        width: 100%;
+        height: 60px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .navbar{
+        display: none;
+    }
+    .searchbox{
+        display: none;
+    }
+    .mainlogo{
+        display: none;
+    }
+    .action_icon[name="login_man"]{
+        display: none;
+    }
+    .action_name{
+        display: none;
+    }
+    main{
+        height: 25px;
+    }
+    .mobile_navbar_logo{
+        display: flex;
+        align-items: center;
+        padding-right: 2em;
+        }
+        .mobile_navbar_logo h4{
+            padding-left: 14px;
+            font-size: 13px;
+        }
+    .mobile_navbar_logo li a{
+        font-family: Assistant,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+        text-decoration: none;
+        list-style: none;
+        color: #282c3f;
+    }
+    .mobile_navbar_logo li{
+        list-style: none;
+    }
+    .loginbox{
+        display: flex;
+        align-items: center;
+        min-width: 150px;
+        justify-content: space-evenly;
+        font-weight: 500;
+        padding-left: 6;
+    }
+    .mobile_searchbox{
+        display: block;
+    }
+    .actioncontainer[name="mobile_searchbox_name"]{
+        display: block;
+    }
+    .mobile_sidebar{
+        display: block;
+        width: 80%;
+        height: 150vh;
+        top: 0;
+        left: 0;
+        background: rgb(244, 244, 244);
+        position: absolute;
+        overflow-y: scroll;
+        transform: translateX(-100%);
+        transition: all 0.5s linear;
+    }
+    
+    .menu_side ul{
+        width: 100%;
+        height: 35vh;
+        background: #3e4152;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+    .sidebar li a{
+        font-family: Assistant,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+        text-decoration: none;
+        list-style: none;
+        color: #282c3f;
+        font-size: 12.5px;
+        letter-spacing: .3px;
+        text-transform: uppercase;
+        font-weight: 700;
+        transition: all 0.2s ease;
+    }
+    .other_services{
+        display: flex;
+        width: 100%;
+        height: 40vh;
+        background:#838383;
+        align-items: end;
+    }
+    .mobile_sidebar ul li{
+        list-style: none;
+    }
+    #close_icon{
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+    }
+    .profile_div li a{
+        font-family: Assistant,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+        text-decoration: none;
+        list-style: none;
+        color: #ffffff;
+        font-size: 12.5px;
+        font-weight: 700;
+    }
+    .profile_div li{
+        list-style: none;
+    }
+    .profile_div{
+        width: 100%;
+        height: 15vh;
+        background: #313131;
+    }
+  
+
+}
